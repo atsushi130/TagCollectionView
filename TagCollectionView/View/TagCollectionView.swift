@@ -25,6 +25,7 @@ final class TagCollectionView: UIView, NibDesignable {
         let layout = TagCollectionLayout()
         layout.estimatedItemSize = CGSize(width: 1, height: 1)
         layout.minimumInteritemSpacing = 4
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0)
         return layout
     }()
     
@@ -38,12 +39,6 @@ final class TagCollectionView: UIView, NibDesignable {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.configureNib()
-    }
-}
-
-extension TagCollectionView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0)
     }
 }
 
